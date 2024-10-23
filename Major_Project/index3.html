@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Page</title>
+
+  <!-- Include p5.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <!-- Include p5.Sound library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+
+  <!-- Load Light.js -->
+  <script src="Light.js"></script>
+
+  <style>
+    /* Ensure no margins or padding for the entire page */
+    body, html {
+      padding: 0;
+      margin: 0;
+      overflow: hidden; /* Prevent scrollbars from appearing */
+    }
+
+    /* Style for the reload button */
+    #reloadButton {
+      position: absolute;
+      top: 1%;
+      right: 1%;
+      color: white;
+      font-size: 18pt;
+      background-color: #000000;
+      border: none;
+      cursor: pointer;
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body>
+    <button id="reloadButton">↻</button>
+
+    <script>
+        // Initialize the sketch from Light.js
+        var activeSketch = new p5(LightPage);
+
+        // Add reload button functionality
+        document.getElementById('reloadButton').addEventListener('click', function() {
+            window.location.href = 'index.html';  // Redirect to Project1 (page 1)
+        });
+    </script>
+</body>
+</html>
